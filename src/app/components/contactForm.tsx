@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState, FormEvent } from 'react';
 import { submitForm } from './submitForm';
@@ -19,7 +18,13 @@ const ContactForm = () => {
 
         const formData = new FormData(event.currentTarget);
 
+        // Log form submission start
+        console.log("Submitting form...");
+
         const result = await submitForm(formData);
+
+        // Log result from submitForm
+        console.log("Form submission result:", result);
 
         if (result.success) {
             setStatusMessage({ type: 'success', text: result.message });
@@ -31,7 +36,7 @@ const ContactForm = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} method="POST" className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
                 {/* First Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input
@@ -62,18 +67,19 @@ const ContactForm = () => {
                         placeholder="Email *"
                         className="w-full p-3 border border-gray-300 rounded-[20px]"
                         required
-                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
                         title="Please enter a valid email address."
                     />
-                    <input
-                        name="tel"
-                        type="tel"
-                        placeholder="Phone Number *"
-                        className="w-full p-3 border border-gray-300 rounded-[20px]"
-                        required
-                        pattern="^[0-9+\-()\s]+$"
-                        title="Phone number can contain digits, spaces, and characters like +, -, (, )."
-                    />
+                   <input
+    name="tel"
+    type="tel"
+    placeholder="Phone Number *"
+    className="w-full p-3 border border-gray-300 rounded-[20px]"
+    required
+    pattern="^[0-9+\-\(\)\s]+$"
+    title="Phone number can contain digits, spaces, and characters like +, -, (, )."
+/>
+
                 </div>
 
                 {/* Third Row */}

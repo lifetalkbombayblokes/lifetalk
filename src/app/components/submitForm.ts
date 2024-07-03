@@ -1,5 +1,5 @@
 import supabase from '@/utils/supabase';
-import { revalidatePath } from 'next/cache';
+// import { revalidatePath } from 'next/cache';
 
 type SubmitFormResponse = {
     success: boolean;
@@ -15,6 +15,9 @@ export const submitForm = async (formData: FormData): Promise<SubmitFormResponse
     const com = formData.get("com") as string;
     const mess = formData.get("mess") as string;
 
+    // Log form data for debugging
+    console.log("Form Data:", { fname, lname, email, tel, des, com, mess });
+
     try {
         const { data, error } = await supabase
             .from("formData")
@@ -28,19 +31,23 @@ export const submitForm = async (formData: FormData): Promise<SubmitFormResponse
                     com,
                     mess,
                 },
-            ])
-            .select();
+            ]);
 
+        // Check for Supabase error
         if (error) {
-            console.error("Error inserting data:", error);
-            return { success: false, message: 'There was an error submitting the form. Please try again.' };
+            console.error("Supabase error:", error.message);
+            return { success: false, message: 'There was an error submitting the form. Please try again. Reason ' + error.message };
         }
 
-        console.log(data);
-        revalidatePath("/");
+        // Log the returned data for debugging
+        console.log("Inserted Data:", data);
+
+        // Revalidate the path if applicable (Next.js specific)
+        // revalidatePath('/');
+
         return { success: true, message: 'Form submitted successfully!' };
-    } catch (error) {
-        console.error("Unexpected error:", error);
+    } catch (unexpectedError) {
+        console.error("Unexpected error:", unexpectedError);
         return { success: false, message: 'Unexpected error occurred. Please try again.' };
     }
 };
