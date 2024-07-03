@@ -10,26 +10,23 @@ type StatusMessage = {
 const ContactForm = () => {
     const [statusMessage, setStatusMessage] = useState<StatusMessage | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [fieldErrors, setFieldErrors] = useState<{ email?: string; tel?: string }>({});
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setIsSubmitting(true);
         setStatusMessage(null);
+        setFieldErrors({});
 
         const formData = new FormData(event.currentTarget);
 
-        // Log form submission start
-        console.log("Submitting form...");
-
         const result = await submitForm(formData);
-
-        // Log result from submitForm
-        console.log("Form submission result:", result);
 
         if (result.success) {
             setStatusMessage({ type: 'success', text: result.message });
         } else {
             setStatusMessage({ type: 'error', text: result.message });
+            setFieldErrors(result.fieldErrors || {});
         }
         setIsSubmitting(false);
     };
@@ -61,26 +58,34 @@ const ContactForm = () => {
 
                 {/* Second Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
                     <input
                         name="email"
                         type="email"
                         placeholder="Email *"
-                        className="w-full p-3 border border-gray-300 rounded-[20px]"
+                        className={`w-full p-3 border ${fieldErrors.email ? 'border-red-500' : 'border-gray-300'} rounded-[20px]`}
                         required
                         pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
                         title="Please enter a valid email address."
                     />
-                   <input
-    name="tel"
-    type="tel"
-    placeholder="Phone Number *"
-    className="w-full p-3 border border-gray-300 rounded-[20px]"
-    required
-    pattern="^[0-9+\-\(\)\s]+$"
-    title="Phone number can contain digits, spaces, and characters like +, -, (, )."
-/>
 
+                    {fieldErrors.email && <p className="text-red-500"> <br/> {fieldErrors.email}</p>}
+                    </div>
+                    <div>
+                    <input
+                        name="tel"
+                        type="tel"
+                        placeholder="Phone Number *"
+                        className={`w-full p-3 border ${fieldErrors.tel ? 'border-red-500' : 'border-gray-300'} rounded-[20px]`}
+                        required
+                        pattern="^[0-9+\-\(\)\s]+$"
+                        title="Phone number can contain digits, spaces, and characters like +, -, (, )."
+                    />
                 </div>
+
+                
+                {fieldErrors.tel && <p className="text-red-500"> <br/> {fieldErrors.tel}</p>}
+                    </div>
 
                 {/* Third Row */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -116,7 +121,7 @@ const ContactForm = () => {
                 {/* Submit Button */}
                 <div className="col-span-1 flex">
                     <div className="flex items-center gap-2">
-                        <p className="text-primary font-semibold">send inquiry</p>
+                        <p className="text-primary font-semibold">Send Inquiry</p>
                         <button
                             type="submit"
                             aria-label="send inquiry"

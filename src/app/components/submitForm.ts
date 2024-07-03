@@ -4,6 +4,10 @@ import supabase from '@/utils/supabase';
 type SubmitFormResponse = {
     success: boolean;
     message: string;
+    fieldErrors?: {
+        email?: string;
+        tel?: string;
+    };
 };
 
 export const submitForm = async (formData: FormData): Promise<SubmitFormResponse> => {
@@ -15,7 +19,6 @@ export const submitForm = async (formData: FormData): Promise<SubmitFormResponse
     const com = formData.get("com") as string;
     const mess = formData.get("mess") as string;
 
-    // Log form data for debugging
     console.log("Form Data:", { fname, lname, email, tel, des, com, mess });
 
     try {
@@ -33,18 +36,24 @@ export const submitForm = async (formData: FormData): Promise<SubmitFormResponse
                 },
             ]);
 
-        // Check for Supabase error
         if (error) {
             console.error("Supabase error:", error.message);
-            return { success: false, message: 'There was an error submitting the form. Please try again. Reason ' + error.message };
+
+            const fieldErrors: { email?: string; tel?: string } = {};
+            if (error.code === '23505') {
+                if (error.message.includes('formdata_tel_key')) {
+                    fieldErrors.tel = 'This phone number is already in use.';
+                }
+                if (error.message.includes('formdata_email_key')) {
+                    fieldErrors.email = 'This email is already in use.';
+                }
+            }
+
+            return { success: false, message: 'There was an error submitting the form. Please try again.', fieldErrors };
         }
 
-        // Log the returned data for debugging
         console.log("Inserted Data:", data);
-
-        // Revalidate the path if applicable (Next.js specific)
         // revalidatePath('/');
-
         return { success: true, message: 'Form submitted successfully!' };
     } catch (unexpectedError) {
         console.error("Unexpected error:", unexpectedError);

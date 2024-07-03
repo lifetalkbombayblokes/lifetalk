@@ -388,7 +388,7 @@ export default async function Home() {
           </div>
           <div className="col-span-1 flex items-end md:justify-end">
             <div className="flex items-center gap-2">
-              <p className="text-primary font-semibold">Know more</p>
+              <p className="text-primary font-semibold">Know More</p>
               <Link
                 aria-label="contact"
                 className="btn btn-circle btn-primary hover:animate-pulse"
