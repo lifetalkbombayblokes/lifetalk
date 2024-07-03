@@ -14,28 +14,28 @@ const therapists = [
         name: 'Kiran Makhijani',
         deg: 'Psychotherapist',
         exp: '8 Years Experience',
-        expert: 'Expertise in : Counseling, Psychotherapy, Clinical Assessments',
+        expert: 'Expertise in: Counseling, Psychotherapy, Clinical Assessments',
         img: img1,
     },
     {
         name: 'Aiman Asad',
         deg: 'Clinical Psychologist',
         exp: '10 Years Experience',
-        expert: 'Expertise in : Mental health advocate , Clinical Assessments, Counselling',
+        expert: 'Expertise in: Mental health advocate , Clinical Assessments, Counselling',
         img: img2,
     },
     {
         name: 'Naseem Kachwala',
         deg: 'Counseling Psychologist',
         exp: '13 Years Experience',
-        expert: 'Expertise in : Corporate Programs ,Psychotherapy, Addiction Specialist',
+        expert: 'Expertise in: Corporate Programs ,Psychotherapy, Addiction Specialist',
         img: img3,
     },
     {
         name: 'Susmita Chakraborty',
         deg: 'Psychologist & Therapist',
         exp: '11 Years Experience',
-        expert: 'Expertise in : Trauma-Informed Care, Queer Affirmative, Mindfulness Therapist',
+        expert: 'Expertise in: Trauma-Informed Care, Queer Affirmative, Mindfulness Therapist',
         img: img4,
     },
 ];
@@ -56,9 +56,7 @@ const Therapist = () => {
                 </h2>
                 <div className='flex gap-2 items-center '>
                     <p className='text-[#8A84E2] '>
-                        To get started, click
-                        <br />
-                        on the button beside
+                        Get Started Now
                     </p>
                     <Link aria-label="contact" href='#contact-us'>
                         <svg className='w-10 h-10' width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">

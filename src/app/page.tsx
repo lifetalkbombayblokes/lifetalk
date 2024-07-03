@@ -139,10 +139,10 @@ export default async function Home() {
                     Thrive at Work
                   </h1>
                   <p className="text-white ">
-                  Corporate Mental Wellness at Your WorkplacePersonalized Mental Wellness for Your Employees Our program goes beyond physical health, focusing on mental well-being, financial fitness, and work-life balance for a holistic approach to thriving.{" "}
+                  Corporate Mental Wellness at Your Workplace. Our program goes beyond physical health, focusing on mental well-being, financial fitness, and work-life balance for a holistic approach to thriving.{" "}
                   </p>
                   <div className="text-white flex items-center pt-9 gap-2 mb-10">
-                    <p>Request callback</p>
+                    <p>Request Callback</p>
                     <Link
                       aria-label="contact"
                       className="btn btn-circle btn-secondary hover:animate-pulse"
