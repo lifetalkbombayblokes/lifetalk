@@ -103,7 +103,7 @@ export default async function Home() {
   return (
     <>
       <section>
-        <div className="relative w-screen h-[70vh] md:h-[80vh] flex items-center justify-center overflow-x-hidden">
+        <div className="relative w-screen h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
           <Image
             loading="eager"
             className=" absolute z-[3]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
