@@ -13,7 +13,7 @@ import googleplay from "@/assets/googleplay.svg";
 import communcationImg from "@/assets/communcationImage.png";
 import Accordion from "@/app/components/accordion";
 import fore from "@/assets/psychologist.png";
-import strip from "@/assets/band.svg";
+import strip from "@/assets/Frame 870-01-01.png";
 import VideoPlayer from "@/app/ui/video";
 import Theraoist from "@/app/components/therapist";
 import Link from "next/link";
@@ -115,10 +115,10 @@ export default async function Home() {
           <Image
             loading="eager"
             style={{ objectFit: "contain" }}
-            className=" top-0 -left-[11%] -rotate-[9deg] scale-[1.75] md:scale-100 md:rotate-0 md:-ml-16 absolute z-[2]  md:-top-1/2 md:left-0"
+            className=" top-0 md:-left-[13%] md:h-[700px] -rotate-[9deg] scale-[1.75] md:scale-[1.25] md:rotate-0 md:-ml-16 absolute z-[2]  md:-top-[30%] md:left-0"
             alt=""
             width={1920}
-            height={1080}
+            height={500}
             src={strip.src}
           />
           <VideoPlayer
