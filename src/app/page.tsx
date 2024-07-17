@@ -115,7 +115,7 @@ export default async function Home() {
           <Image
             loading="eager"
             style={{ objectFit: "contain" }}
-            className=" top-0 md:-left-[13%] md:h-[700px] -rotate-[9deg] scale-[1.75] md:scale-[1.25] md:rotate-0 md:-ml-16 absolute z-[2]  md:-top-[30%] md:left-0"
+            className=" top-0 md:-left-[15%] md:h-[700px] -rotate-[9deg] scale-[1.75] md:scale-[1.25] md:rotate-0 md:-ml-16 absolute z-[2]  md:-top-[30%] md:left-0"
             alt=""
             width={1920}
             height={500}
