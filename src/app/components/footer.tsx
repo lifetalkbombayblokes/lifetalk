@@ -87,7 +87,6 @@ const Footer = () => {
                         <ul className='flex flex-col gap-y-2'>
                             {menu.map((item, index) => <li key={index}><Link aria-label={item.text} href={item.url} className="hover:underline">{item.text}</Link></li>)}
                         </ul>
-                        <a href="@/app/privacypolicy.tsx">Privacy Policy</a>
                     </div>
 
 

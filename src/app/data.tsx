@@ -14,5 +14,9 @@ export const menu = [
     {
         text: 'Contact Us',
         url: '#contact-us'
+    },
+    {
+        text: 'Privacy Policy',
+        url: '@/app/privacypolicy.tsx'
     }
 ]
