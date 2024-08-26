@@ -86,7 +86,7 @@ const Footer = () => {
                         <h3 className="font-bold mb-4">Quick Link</h3>
                         <ul className='flex flex-col gap-y-2'>
                             {menu.map((item, index) => <li key={index}><Link aria-label={item.text} href={item.url} className="hover:underline">{item.text}</Link></li>)}
-
+                            <a href="@/app/privacypolicy.tsx">Privacy Policy</a>
                         </ul>
                     </div>
 
