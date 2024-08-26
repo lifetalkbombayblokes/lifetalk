@@ -6,7 +6,7 @@ const PrivacyPolicy: React.FC = () => {
     <div>
       <Header />
       <iframe
-        src="/privacy-policy.html"
+        src="/privacypolicy.html"
         style={{ width: '100%', height: '100vh', border: 'none' }}
         title="Privacy Policy"
       ></iframe>
