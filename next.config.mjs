@@ -7,7 +7,15 @@ const nextConfig = {
             },
             {
                 hostname: 'tsuahomfkoxepnrgbjcu.supabase.co'
-            }
+            },
+            {
+                protocol: "http",
+                hostname: "*",
+              },
+              {
+                protocol: "https",
+                hostname: "*",
+              },
         ]
     }
 };
