@@ -119,7 +119,7 @@ const ContactForm = () => {
                 </div>
 
                 {/* Submit Button */}
-                <div className="col-span-1 flex">
+                <button className="col-span-1 flex">
                     <div className="flex items-center gap-2">
                         <p className="text-primary font-semibold">Send Inquiry</p>
                         <button
@@ -142,7 +142,7 @@ const ContactForm = () => {
                             </svg>
                         </button>
                     </div>
-                </div>
+                </button>
             </form>
             {statusMessage && (
                 <div
