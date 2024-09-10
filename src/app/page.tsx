@@ -19,6 +19,7 @@ import Theraoist from "@/app/components/therapist";
 import Link from "next/link";
 import Slider from "./components/slider";
 import ContactForm from "./components/contactForm";
+import freeBanner from "@/assets/free-banner.jpg";
 
 const clientLogo = [
   {
@@ -129,6 +130,54 @@ export default async function Home() {
           />
         </div>
       </section>
+      <section>
+        <div className="page-width my-20">
+          <div className="md:grid md:grid-cols-2 flex flex-col-reverse">
+            <Image
+              src={freeBanner}
+              alt="free"
+              width={1920}
+              height={400}
+              className=" w-full mix-blend-darken aspect-square rounded-3xl"
+            />
+
+            <div className="flex justify-center flex-col  md:px-20">
+              <h2 className="header-class  pb-4 pt-5 text-left heading text-[#2F8455]">
+                Free Corporate Mental Wellness Assessment
+              </h2>
+
+              <p className="text-left">
+                Know your company&rsquo;s mental wellness score, with a free
+                assessment
+              </p>
+              <br />
+              <div className="text-white flex items-center gap-2 mb-10">
+                <p className="text-[#2F8455] header-class ">Register Now</p>
+                <Link
+                  aria-label="contact"
+                  className="btn btn-circle hover:animate-pulse"
+                  href="#contact-us"
+                >
+                  <svg
+                    className="w-full h-full "
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="27" cy="27" r="27" fill="#2F8455" />
+                    <path
+                      d="M40.7071 27.7071C41.0976 27.3166 41.0976 26.6834 40.7071 26.2929L34.3431 19.9289C33.9526 19.5384 33.3195 19.5384 32.9289 19.9289C32.5384 20.3195 32.5384 20.9526 32.9289 21.3431L38.5858 27L32.9289 32.6569C32.5384 33.0474 32.5384 33.6805 32.9289 34.0711C33.3195 34.4616 33.9526 34.4616 34.3431 34.0711L40.7071 27.7071ZM14 28H40V26H14V28Z"
+                      fill="white"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div className="relative">
         <section>
           <div className="bg-primary relative pt-8 md:pt-20">
@@ -139,7 +188,10 @@ export default async function Home() {
                     Thrive at Work
                   </h1>
                   <p className="text-white ">
-                  Corporate Mental Wellness at Your Workplace. Our program goes beyond physical health, focusing on mental well-being, financial fitness, and work-life balance for a holistic approach to thriving.{" "}
+                    Corporate Mental Wellness at Your Workplace. Our program
+                    goes beyond physical health, focusing on mental well-being,
+                    financial fitness, and work-life balance for a holistic
+                    approach to thriving.{" "}
                   </p>
                   <div className="text-white flex items-center pt-9 gap-2 mb-10">
                     <p>Request Callback</p>
@@ -199,7 +251,7 @@ export default async function Home() {
                     Not a Corporate Employee?{" "}
                   </h1>
                   <p className="text-white">
-                  Download the App Now & Take a Session.
+                    Download the App Now & Take a Session.
                   </p>
                 </div>
                 <div className=" flex md:grid grid-cols-2 gap-4 md:gap-8">
@@ -375,7 +427,7 @@ export default async function Home() {
           </div>
         </section>
       </div>
-
+      {/* New Section */}
       <section className="py-10  page-width">
         <div className="grid md:grid-cols-2 gap-4   ">
           <div className="col-span-1">
@@ -442,7 +494,6 @@ export default async function Home() {
           ))}
         </div>
       </section>
-
       {/* -- End of why choose us section --  */}
       <div className="bg-[#E5FFF2]/30">
         <section className="page-width pt-8 md:pt-20">
@@ -532,11 +583,10 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
       {/*-- Client Carousel*/}
       <section className="md:pt-10 page-width">
         <h2 className="heading footer-class pb-2 text-[#26275F] text-center">
-        Our Clientele
+          Our Clientele
         </h2>
 
         <div className="flex justify-center items-center mt-5">
@@ -577,7 +627,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
       <section>
         <div className="page-width pt-16 ">
           <div className="container mx-auto p-4">
