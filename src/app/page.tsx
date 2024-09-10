@@ -20,6 +20,7 @@ import Link from "next/link";
 import Slider from "./components/slider";
 import ContactForm from "./components/contactForm";
 import freeBanner from "@/assets/free-banner.jpg";
+import MetaPixel from "@/app/components/MetaPixel";
 
 const clientLogo = [
   {
@@ -103,6 +104,8 @@ const unlockData = [
 export default async function Home() {
   return (
     <>
+      <MetaPixel />
+
       <section>
         <div className="relative w-screen h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
           <Image
