@@ -111,8 +111,9 @@ const ContactForm = () => {
             <input
               name="des"
               type="text"
-              placeholder="Designation"
+              placeholder="Designation *"
               className="w-full p-3 border border-gray-300 rounded-[20px]"
+              required
               pattern="^[A-Za-z\s.,'-]+$"
               title="Designation can contain letters, spaces, and characters like ., '-."
             />
@@ -120,8 +121,9 @@ const ContactForm = () => {
           <input
             name="com"
             type="text"
-            placeholder="Company Name"
+            placeholder="Company Name *"
             className="w-full p-3 border border-gray-300 rounded-[20px]"
+            required
             pattern="^[A-Za-z\s.,'-]+$"
             title="Company name can contain letters, spaces, and characters like ., '-."
           />
