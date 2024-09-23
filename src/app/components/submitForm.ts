@@ -22,7 +22,7 @@ export const submitForm = async (
   const com = formData.get("com") as string;
   const mess = formData.get("mess") as string;
 
-  console.log("Form Data:", { fname, lname, email, tel, des, com, mess });
+  // console.log("Form Data:", { fname, lname, email, tel, des, com, mess });
 
   try {
     const { data, error } = await supabase.from("formData").insert([
