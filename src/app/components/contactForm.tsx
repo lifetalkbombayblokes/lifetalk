@@ -74,6 +74,24 @@ const ContactForm = () => {
               required
               pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
               title="Please enter a valid email address."
+              onChange={(e) => {
+                const email = e.target.value;
+                const blockedDomains = [
+                  "gmail.com",
+                  "yahoo.com",
+                  "ymail.com",
+                  "hotmail.com",
+                ];
+                const emailDomain = email.split("@")[1];
+                if (blockedDomains.includes(emailDomain)) {
+                  setFieldErrors((prev) => ({
+                    ...prev,
+                    email: "This email domain is not allowed.",
+                  }));
+                } else {
+                  setFieldErrors((prev) => ({ ...prev, email: "" }));
+                }
+              }}
             />
 
             {fieldErrors.email && (
@@ -166,7 +184,7 @@ const ContactForm = () => {
         <button
           type="submit"
           className="btn btn-primary"
-          disabled={isSubmitting}
+          disabled={isSubmitting || !!fieldErrors.email || !!fieldErrors.tel}
         >
           {isSubmitting ? "Sending..." : "Send Inquiry"}
         </button>
