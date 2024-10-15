@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Life Talk | Holistic Wellness",
   description:
     "Expert-led mental health and wellness services for happier, healthier individuals & workplaces.",
+  openGraph: {
+    title: "Life Talk | Holistic Wellness",
+    description:
+      "Expert-led mental health and wellness services for happier, healthier individuals & workplaces.",
+  },
 };
 
 export default function RootLayout({
