@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Playfair_Display, Archivo_Narrow, Open_Sans } from "next/font/google";
 import "./globals.css";
@@ -11,9 +10,9 @@ const openSans = Open_Sans({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Life Talk | Holistic Wellness",
-  description: "We will put it later",
+  description:
+    "Expert-led mental health and wellness services for happier, healthier individuals & workplaces.",
 };
-
 
 export default function RootLayout({
   children,
@@ -25,11 +24,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${playfairDisplay.className} ${archivoNarrow.className} ${openSans.className}`}>
+      <body
+        className={`${playfairDisplay.className} ${archivoNarrow.className} ${openSans.className}`}
+      >
         <Header />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
 
         <Footer />
       </body>
