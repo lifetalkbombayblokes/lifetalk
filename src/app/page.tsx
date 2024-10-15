@@ -260,7 +260,7 @@ export default async function Home() {
                 <div className=" flex md:grid grid-cols-2 gap-4 md:gap-8">
                   <Link
                     aria-label="apple app store logo"
-                    href="https://www.apple.com/in/app-store/"
+                    href="https://apps.apple.com/in/app/lifetalk-wellness/id6470373147"
                     className=""
                   >
                     <Image
@@ -273,7 +273,9 @@ export default async function Home() {
                   </Link>
                   <Link
                     aria-label="google play store logo"
-                    href={"https://play.google.com/store/games?hl=en&pli=1"}
+                    href={
+                      "https://play.google.com/store/apps/details?id=com.ltcorporate.thriive&hl=en_IN"
+                    }
                     className=""
                   >
                     <Image
