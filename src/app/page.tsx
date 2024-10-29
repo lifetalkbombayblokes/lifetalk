@@ -107,12 +107,20 @@ export default async function Home() {
     <>
       <MetaPixel />
 
-      <Link
+      {/* <Link
         href={"https://api.whatsapp.com/send?phone=918451936776"}
         target="_blank"
         className="size-14 fixed right-5 bottom-5 z-50 hover:scale-95 transition-all"
       >
         <FaWhatsappSquare className="h-full w-full text-[#31D14F]" />
+      </Link> */}
+
+      <Link
+        href={"https://api.whatsapp.com/send?phone=918451936776"}
+        target="_blank"
+        className="fixed right-5 bottom-5 z-50 hover:scale-95 transition-all bg-[#31D14F] text-white rounded-full p-2 flex justify-center items-center gap-1"
+      >
+        <FaWhatsapp className="size-10" /> Schedule an appointment
       </Link>
 
       <section>
