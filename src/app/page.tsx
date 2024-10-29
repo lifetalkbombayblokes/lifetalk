@@ -118,9 +118,9 @@ export default async function Home() {
       <Link
         href={"https://api.whatsapp.com/send?phone=918451936776"}
         target="_blank"
-        className="fixed right-5 bottom-5 z-50 hover:scale-95 transition-all bg-[#31D14F] text-white rounded-full p-2 flex justify-center items-center gap-1"
+        className="fixed right-5 bottom-5 z-50 hover:scale-95 transition-all bg-[#31D14F] text-white rounded-full p-2 flex justify-center items-center gap-1 font-medium"
       >
-        <FaWhatsapp className="size-10" /> Schedule an appointment
+        <FaWhatsapp className="size-8" /> Book Session
       </Link>
 
       <section>
