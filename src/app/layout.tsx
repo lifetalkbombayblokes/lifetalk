@@ -9,11 +9,11 @@ const archivoNarrow = Archivo_Narrow({ weight: "700", subsets: ["latin"] });
 const openSans = Open_Sans({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Life Talk | Holistic Wellness",
+  title: "Life Talk | Mental Wellness",
   description:
     "Expert-led mental health and wellness services for happier, healthier individuals & workplaces.",
   openGraph: {
-    title: "Life Talk | Holistic Wellness",
+    title: "Life Talk | Mental Wellness",
     description:
       "Expert-led mental health and wellness services for happier, healthier individuals & workplaces.",
   },

@@ -33,7 +33,7 @@ const Header = () => {
             <div className="navbar page-width">
                 <div className="navbar-start md:max-w-96">
                     <Link aria-label="life talk logo" href={'/'}>
-                        <Image src={logo.src} width={logo.width} height={logo.height} alt='life talks logo' />
+                        <Image src={logo.src} width={250} height={150} alt='life talks logo' />
                         <p className="btn btn-ghost text-xl sr-only">Life talks</p>
                     </Link>
                 </div>
