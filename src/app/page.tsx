@@ -22,6 +22,10 @@ import ContactForm from "./components/contactForm";
 import freeBanner from "@/assets/free-banner.jpg";
 import MetaPixel from "@/app/components/MetaPixel";
 import { FaWhatsapp, FaWhatsappSquare } from "react-icons/fa";
+import Bio from "@/assets/bio.png";
+import Es from "@/assets/es.png";
+import Tanishq from "@/assets/tanishq.png";
+import theredpen from "@/assets/theredpen.png";
 
 const clientLogo = [
   {
@@ -39,6 +43,22 @@ const clientLogo = [
   {
     logo: StockAxis,
     name: "stock axis",
+  },
+  {
+    logo: Bio,
+    name: "bio",
+  },
+  {
+    logo: Es,
+    name: "es",
+  },
+  {
+    logo: Tanishq,
+    name: "tanishq",
+  },
+  {
+    logo: theredpen,
+    name: "theredpen",
   },
 ];
 
