@@ -60,7 +60,7 @@ const benefits = [
 
 const Expertise = () => {
   return (
-    <div className="w-[98%] md:w-11/12 mx-auto flex flex-col gap-3">
+    <div className="w-[98%] md:w-11/12 mx-auto flex flex-col gap-3 mb-10">
       <h2 className="heading text-center footer-class pb-2 text-[#26275F]">
         Our Expertise
       </h2>
