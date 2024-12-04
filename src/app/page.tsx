@@ -131,7 +131,7 @@ export default async function Home() {
       {/* <Link
         href={"https://api.whatsapp.com/send?phone=918451936776"}
         target="_blank"
-        className="size-14 fixed right-5 bottom-5 z-50 hover:scale-95 transition-all"
+        className="size-14 fixed right-5 bottom-5 z-50 hover:scale-95  transition-all"
       >
         <FaWhatsappSquare className="h-full w-full text-[#31D14F]" />
       </Link> */}
