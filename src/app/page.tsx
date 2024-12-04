@@ -27,6 +27,7 @@ import Es from "@/assets/es.png";
 import Tanishq from "@/assets/tanishq.png";
 import theredpen from "@/assets/theredpen.png";
 import Expertise from "./components/Expertise";
+import CarouselSection from "./components/CarouselSection";
 
 const clientLogo = [
   {
@@ -144,7 +145,7 @@ export default async function Home() {
         <FaWhatsapp className="size-8" /> Book Session
       </Link>
 
-      <section>
+      {/* <section>
         <div className="relative w-screen h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
           <Image
             loading="eager"
@@ -170,6 +171,10 @@ export default async function Home() {
             className={""}
           />
         </div>
+      </section> */}
+
+      <section className="mt-28">
+        <CarouselSection />
       </section>
 
       <div className="bg-[#E5FFF2]/30 -mt-10 md:mt-0">
