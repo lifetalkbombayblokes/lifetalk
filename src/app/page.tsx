@@ -27,6 +27,7 @@ import Es from "@/assets/es.png";
 import Tanishq from "@/assets/tanishq.png";
 import theredpen from "@/assets/theredpen.png";
 import Expertise from "./components/Expertise";
+import CarouselSection from "./components/CarouselSection";
 
 const clientLogo = [
   {
@@ -144,7 +145,7 @@ export default async function Home() {
         <FaWhatsapp className="size-8" /> Book Session
       </Link>
 
-      <section>
+      {/* <section>
         <div className="relative w-screen h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden">
           <Image
             loading="eager"
@@ -170,6 +171,10 @@ export default async function Home() {
             className={""}
           />
         </div>
+      </section> */}
+
+      <section className="mt-28">
+        <CarouselSection />
       </section>
 
       <div className="bg-[#E5FFF2]/30 -mt-10 md:mt-0">
@@ -297,9 +302,105 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      <section className="py-10  page-width">
+        <div className="grid md:grid-cols-2 gap-4   ">
+          <div className="col-span-1">
+            <h2 className="heading  footer-class pb-2 text-[#26275F]">
+              Why Lifetalk?
+            </h2>
+            {/* <p className="">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            </p> */}
+          </div>
+          <div className="col-span-1 flex items-end md:justify-end">
+            <div className="flex items-center gap-2">
+              <p className="text-primary font-semibold">Know More</p>
+              <Link
+                aria-label="contact"
+                className="btn btn-circle btn-primary hover:animate-pulse"
+                href="#contact-us"
+              >
+                <svg
+                  width="27"
+                  height="16"
+                  viewBox="0 0 27 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M26.7071 8.70711C27.0976 8.31658 27.0976 7.68342 26.7071 7.29289L20.3431 0.928932C19.9526 0.538408 19.3195 0.538408 18.9289 0.928932C18.5384 1.31946 18.5384 1.95262 18.9289 2.34315L24.5858 8L18.9289 13.6569C18.5384 14.0474 18.5384 14.6805 18.9289 15.0711C19.3195 15.4616 19.9526 15.4616 20.3431 15.0711L26.7071 8.70711ZM0 9H26V7H0V9Z"
+                    fill="white"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-wrap  justify-between md:gap-10">
+          {cardData.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col flex-grow w-96 items-center"
+            >
+              <div
+                className={`${
+                  item.heading === "For Employees"
+                    ? "bg-[#52309B]"
+                    : "bg-[#52309B]"
+                } rounded-full p-4 relative -bottom-4`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-8 h-8 text-white"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+                  />
+                </svg>
+              </div>
+              <div
+                className={`${
+                  item.heading === "For Employees"
+                    ? "bg-[#FBC18E]"
+                    : "bg-[#8A84E2]"
+                } p-7 rounded-[30px] flex-grow flex flex-col`}
+              >
+                <p
+                  className={`text-base ${
+                    item.heading === "For Employees"
+                      ? "text-black"
+                      : "text-white"
+                  } pb-2 font-semibold text-center`}
+                >
+                  {item.heading}
+                </p>
+                <p
+                  className={`${
+                    item.heading === "For Employees"
+                      ? "text-black"
+                      : "text-white"
+                  } text-center`}
+                >
+                  {item.para}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Expertise />
+
       <div className="relative">
         <section>
-          <div className="bg-primary relative pt-8 md:pt-20">
+          <div className="bg-[#26275F] relative pt-8 md:pt-20">
             <div className="page-width">
               <div className="flex  flex-wrap justify-between">
                 <div className=" w-full md:w-1/2">
@@ -411,7 +512,7 @@ export default async function Home() {
                 viewBox="0 0 1440 200"
               >
                 <path
-                  className=" fill-primary"
+                  className=" fill-[#26275F]"
                   fill=""
                   fillOpacity="1"
                   d="M0,128L40,138.7C80,149,160,171,240,181.3C320,192,400,192,480,176C560,160,640,128,720,106.7C800,85,880,75,960,69.3C1040,64,1120,64,1200,85.3C1280,107,1360,149,1400,170.7L1440,192L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
@@ -429,7 +530,7 @@ export default async function Home() {
             >
               Empowering Your People,
               <br />
-              <span className="text-secondary">
+              <span className="text-[#EA1410]">
                 Strengthening Your Business
               </span>
             </h2>
@@ -549,98 +650,7 @@ export default async function Home() {
         </section>
       </div>
       {/* New Section */}
-      <section className="py-10  page-width">
-        <div className="grid md:grid-cols-2 gap-4   ">
-          <div className="col-span-1">
-            <h2 className="heading  footer-class pb-2 text-[#26275F]">
-              Why Lifetalk?
-            </h2>
-            {/* <p className="">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            </p> */}
-          </div>
-          <div className="col-span-1 flex items-end md:justify-end">
-            <div className="flex items-center gap-2">
-              <p className="text-primary font-semibold">Know More</p>
-              <Link
-                aria-label="contact"
-                className="btn btn-circle btn-primary hover:animate-pulse"
-                href="#contact-us"
-              >
-                <svg
-                  width="27"
-                  height="16"
-                  viewBox="0 0 27 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M26.7071 8.70711C27.0976 8.31658 27.0976 7.68342 26.7071 7.29289L20.3431 0.928932C19.9526 0.538408 19.3195 0.538408 18.9289 0.928932C18.5384 1.31946 18.5384 1.95262 18.9289 2.34315L24.5858 8L18.9289 13.6569C18.5384 14.0474 18.5384 14.6805 18.9289 15.0711C19.3195 15.4616 19.9526 15.4616 20.3431 15.0711L26.7071 8.70711ZM0 9H26V7H0V9Z"
-                    fill="white"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-wrap  justify-between md:gap-10">
-          {cardData.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col flex-grow w-96 items-center"
-            >
-              <div
-                className={`${
-                  item.heading === "For Employees"
-                    ? "bg-[#52309B]"
-                    : "bg-[#52309B]"
-                } rounded-full p-4 relative -bottom-4`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-8 h-8 text-white"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
-                  />
-                </svg>
-              </div>
-              <div
-                className={`${
-                  item.heading === "For Employees"
-                    ? "bg-[#FBC18E]"
-                    : "bg-[#8A84E2]"
-                } p-7 rounded-[30px] flex-grow flex flex-col`}
-              >
-                <p
-                  className={`text-base ${
-                    item.heading === "For Employees"
-                      ? "text-black"
-                      : "text-white"
-                  } pb-2 font-semibold text-center`}
-                >
-                  {item.heading}
-                </p>
-                <p
-                  className={`${
-                    item.heading === "For Employees"
-                      ? "text-black"
-                      : "text-white"
-                  } text-center`}
-                >
-                  {item.para}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+
       {/* -- End of why choose us section --  */}
 
       {/* <section className="page-width">
@@ -697,8 +707,6 @@ export default async function Home() {
           </div>
         </div>
       </section> */}
-
-      <Expertise />
 
       <section>
         <div className="page-width pt-16 ">
