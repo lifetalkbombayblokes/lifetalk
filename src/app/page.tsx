@@ -26,6 +26,7 @@ import Bio from "@/assets/bio.png";
 import Es from "@/assets/es.png";
 import Tanishq from "@/assets/tanishq.png";
 import theredpen from "@/assets/theredpen.png";
+import Expertise from "./components/Expertise";
 
 const clientLogo = [
   {
@@ -170,6 +171,84 @@ export default async function Home() {
           />
         </div>
       </section>
+
+      <div className="bg-[#E5FFF2]/30 -mt-10 md:mt-0">
+        <section className="page-width pt-5 md:pt-14">
+          <Theraoist />
+        </section>
+      </div>
+      <div className="w-full z-0 overflow-x-clip">
+        <svg
+          className="y=-10%"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <defs>
+            <filter id="shadow" x="-50%" y="-8%" width="200%" height="130%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
+              <feOffset dx="5" dy="3" result="offsetblur" />
+              <feFlood floodColor="rgba(200, 240, 230, 0.5)" />
+              <feComposite in2="offsetblur" operator="in" />
+              <feMerge>
+                <feMergeNode />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          <path
+            fill="#F8FFFB"
+            fillOpacity="1"
+            d="M0,192L80,202.7C160,213,320,235,480,208C640,181,800,107,960,85.3C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+            filter="url(#shadow)"
+          ></path>
+        </svg>
+      </div>
+
+      {/*-- Client Carousel*/}
+      <section className="md:pt-10 page-width">
+        <h2 className="heading footer-class pb-2 text-[#26275F] text-center">
+          Our Clientele
+        </h2>
+
+        <div className="flex justify-center items-center mt-5">
+          <div className="carousel gap-16 carousel-center rounded-box items-center">
+            <>
+              <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+                <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                  {clientLogo.map((item, index) => (
+                    <li key={index}>
+                      <Image
+                        width={150}
+                        height={150}
+                        src={item.logo}
+                        alt={item.name}
+                        className=" object-contain aspect-square"
+                      />
+                    </li>
+                  ))}
+                </ul>
+                <ul
+                  className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+                  aria-hidden="true"
+                >
+                  {clientLogo.map((item, index) => (
+                    <li key={index}>
+                      <Image
+                        width={150}
+                        height={150}
+                        src={item.logo}
+                        alt={item.name}
+                        className=" object-contain aspect-square"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          </div>
+        </div>
+      </section>
+
       <section>
         <div className="page-width my-20">
           <div className="md:grid md:grid-cols-2 flex flex-col-reverse">
@@ -257,7 +336,7 @@ export default async function Home() {
                 </div>
                 <div>
                   <div className=" grid md:grid-cols-3 gap-4">
-                    <div className="bg-[#DDDDDD] col-span-1 h-[200px]  rounded-xl">
+                    <div className="bg-[#DDDDDD] col-span-1 h-[200px] rounded-xl">
                       <Image
                         width={171}
                         height={200}
@@ -510,7 +589,13 @@ export default async function Home() {
               key={index}
               className="flex flex-col flex-grow w-96 items-center"
             >
-              <div className="bg-[#0C64BC] rounded-full p-4 relative -bottom-4">
+              <div
+                className={`${
+                  item.heading === "For Employees"
+                    ? "bg-[#52309B]"
+                    : "bg-[#52309B]"
+                } rounded-full p-4 relative -bottom-4`}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -526,49 +611,39 @@ export default async function Home() {
                   />
                 </svg>
               </div>
-              <div className="bg-[#8A84E2] p-7 rounded-[30px] flex-grow flex flex-col">
-                <p className="text-base text-white pb-2 font-semibold text-center">
+              <div
+                className={`${
+                  item.heading === "For Employees"
+                    ? "bg-[#FBC18E]"
+                    : "bg-[#8A84E2]"
+                } p-7 rounded-[30px] flex-grow flex flex-col`}
+              >
+                <p
+                  className={`text-base ${
+                    item.heading === "For Employees"
+                      ? "text-black"
+                      : "text-white"
+                  } pb-2 font-semibold text-center`}
+                >
                   {item.heading}
                 </p>
-                <p className="text-white text-center">{item.para}</p>
+                <p
+                  className={`${
+                    item.heading === "For Employees"
+                      ? "text-black"
+                      : "text-white"
+                  } text-center`}
+                >
+                  {item.para}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </section>
       {/* -- End of why choose us section --  */}
-      <div className="bg-[#E5FFF2]/30">
-        <section className="page-width pt-8 md:pt-20">
-          <Theraoist />
-        </section>
-      </div>
-      <div className="w-full z-0 overflow-x-clip">
-        <svg
-          className="y=-10%"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-        >
-          <defs>
-            <filter id="shadow" x="-50%" y="-8%" width="200%" height="130%">
-              <feGaussianBlur in="SourceAlpha" stdDeviation="5" />
-              <feOffset dx="5" dy="3" result="offsetblur" />
-              <feFlood floodColor="rgba(200, 240, 230, 0.5)" />
-              <feComposite in2="offsetblur" operator="in" />
-              <feMerge>
-                <feMergeNode />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-          <path
-            fill="#F8FFFB"
-            fillOpacity="1"
-            d="M0,192L80,202.7C160,213,320,235,480,208C640,181,800,107,960,85.3C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-            filter="url(#shadow)"
-          ></path>
-        </svg>
-      </div>
-      <section className="page-width">
+
+      {/* <section className="page-width">
         <div className="grid grid-cols-2 gap-4 pb-4">
           <div className="col-span-1">
             <h2
@@ -583,7 +658,6 @@ export default async function Home() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row md:space-x-4 p-4">
-          {/* First column with an image */}
           <div className="md:w-1/2">
             <Image
               src={therapyImg}
@@ -593,9 +667,7 @@ export default async function Home() {
               className="rounded-lg"
             />
           </div>
-          {/* Second column with nested rows */}
           <div className="md:w-1/2 flex flex-col space-y-4">
-            {/* First nested row */}
             <div className=" grid md:grid-cols-2">
               {unlockData.map((item, index) => (
                 <div key={index} className="  md:p-4">
@@ -624,51 +696,10 @@ export default async function Home() {
             </div>
           </div>
         </div>
-      </section>
-      {/*-- Client Carousel*/}
-      <section className="md:pt-10 page-width">
-        <h2 className="heading footer-class pb-2 text-[#26275F] text-center">
-          Our Clientele
-        </h2>
+      </section> */}
 
-        <div className="flex justify-center items-center mt-5">
-          <div className="carousel gap-16 carousel-center rounded-box items-center">
-            <>
-              <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-                <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-                  {clientLogo.map((item, index) => (
-                    <li key={index}>
-                      <Image
-                        width={150}
-                        height={150}
-                        src={item.logo}
-                        alt={item.name}
-                        className=" object-contain aspect-square"
-                      />
-                    </li>
-                  ))}
-                </ul>
-                <ul
-                  className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
-                  aria-hidden="true"
-                >
-                  {clientLogo.map((item, index) => (
-                    <li key={index}>
-                      <Image
-                        width={150}
-                        height={150}
-                        src={item.logo}
-                        alt={item.name}
-                        className=" object-contain aspect-square"
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </>
-          </div>
-        </div>
-      </section>
+      <Expertise />
+
       <section>
         <div className="page-width pt-16 ">
           <div className="container mx-auto p-4">
