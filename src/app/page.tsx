@@ -567,13 +567,13 @@ export default async function Home() {
                 muted
                 autoPlay
                 playsInline
-                className=" w-full mix-blend-darken md:max-h-[500px] "
+                className=" w-full mix-blend-darken md:max-h-[500px]"
               >
                 <source
                   src={`https://tsuahomfkoxepnrgbjcu.supabase.co/storage/v1/object/public/assets/banner800.mp4?t=2024-06-12T11%3A40%3A36.667Z`}
                   type="video/mp4"
                 />
-                Your browser does not support the video tag.
+                Your browser does not support the video tag. 
               </video> */}
 
               <div className="flex justify-center flex-col  md:px-20">
