@@ -28,6 +28,7 @@ import Tanishq from "@/assets/tanishq.png";
 import theredpen from "@/assets/theredpen.png";
 import Expertise from "./components/Expertise";
 import CarouselSection from "./components/CarouselSection";
+import Therapist from "@/app/components/therapist";
 
 const clientLogo = [
   {
@@ -177,9 +178,9 @@ export default async function Home() {
         <CarouselSection />
       </section>
 
-      <div className="bg-[#E5FFF2]/30 -mt-10 md:mt-0">
+      <div className="bg-[#E5FFF2]/30 mt-0">
         <section className="page-width pt-5 md:pt-14">
-          <Theraoist />
+          <Therapist />
         </section>
       </div>
       <div className="w-full z-0 overflow-x-clip">

@@ -23,11 +23,22 @@ const CarouselSection = () => {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
   const [linkHref, setLinkHref] = useState("#contact");
+  const [image1src, setImage1Src] = useState("/images/banner-1-mobile.webp");
+  const [image2src, setImage2Src] = useState("/images/banner-2-mobile.webp");
+  const [image3src, setImage3Src] = useState("/images/banner-3-mobile.webp");
 
   useEffect(() => {
-    const href = window.innerWidth > 768 ? "#contact" : "#contact_";
-    setLinkHref(href);
+    if (window.innerWidth > 768) {
+      setImage1Src("/images/banner-1.webp");
+      setImage2Src("/images/banner-2.webp");
+      setImage3Src("/images/banner-3.webp");
+    }
   }, []);
+
+  // useEffect(() => {
+  //   const href = window.innerWidth > 768 ? "#contact" : "#contact_";
+  //   setLinkHref(href);
+  // }, []);
 
   useEffect(() => {
     if (!api) {
@@ -66,52 +77,25 @@ const CarouselSection = () => {
     >
       <CarouselContent>
         <CarouselItem>
-          <div className="h-[70vh] md:h-[80vh] flex justify-between items-center bg-cover md:bg-center select-none bg-no-repeat">
+          <div className="h-[50vh] md:h-[85vh] flex justify-between items-center bg-cover md:bg-center select-none bg-no-repeat max-sm:aspect-square">
             <div className="w-full h-full relative">
-              <Image
-                src={
-                  typeof window !== "undefined" && window.innerWidth > 768
-                    ? "/images/banner-1.webp"
-                    : "/images/banner-1-mobile.webp"
-                }
-                alt="banner-1"
-                fill
-                priority
-              />
+              <Image src={image1src} alt="banner-1" fill priority />
             </div>
           </div>
         </CarouselItem>
 
         <CarouselItem>
-          <div className="h-[70vh] md:h-[80vh] flex justify-between items-center bg-cover md:bg-center select-none bg-no-repeat">
+          <div className="h-[50vh] md:h-[85vh] flex justify-between items-center bg-cover md:bg-center select-none bg-no-repeat max-sm:aspect-square">
             <div className="w-full h-full relative">
-              <Image
-                src={
-                  typeof window !== "undefined" && window.innerWidth > 768
-                    ? "/images/banner-2.webp"
-                    : "/images/banner-2-mobile.webp"
-                }
-                alt="banner-2"
-                fill
-                priority
-              />
+              <Image src={image2src} alt="banner-2" fill priority />
             </div>
           </div>
         </CarouselItem>
 
         <CarouselItem>
-          <div className="h-[70vh] md:h-[80vh] flex justify-between items-center bg-cover md:bg-center select-none bg-no-repeat">
+          <div className="h-[50vh] md:h-[85vh] flex justify-between items-center bg-cover md:bg-center select-none bg-no-repeat max-sm:aspect-square">
             <div className="w-full h-full relative">
-              <Image
-                src={
-                  typeof window !== "undefined" && window.innerWidth > 768
-                    ? "/images/banner-3.webp"
-                    : "/images/banner-3-mobile.webp"
-                }
-                alt="banner-3"
-                fill
-                priority
-              />
+              <Image src={image3src} alt="banner-3" fill priority />
             </div>
           </div>
         </CarouselItem>
