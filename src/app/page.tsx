@@ -92,7 +92,7 @@ const cardData = [
   {
     icon: "",
     heading: "For Individuals",
-    para: "With 100+ experts specializing in areas like sexual wellness, love coaching, and life management, it provides personalized, confidential care anytime, anywhere.",
+    para: "With 100+ expert therapists specializing in areas like sexual wellness, love coaching, and life management, it provides personalized, confidential care anytime, anywhere.",
   },
   {
     icon: "",
