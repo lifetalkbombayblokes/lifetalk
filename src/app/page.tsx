@@ -91,6 +91,11 @@ const accordionData = [
 const cardData = [
   {
     icon: "",
+    heading: "For Individuals",
+    para: "With 100+ experts specializing in areas like sexual wellness, love coaching, and life management, it provides personalized, confidential care anytime, anywhere.",
+  },
+  {
+    icon: "",
     heading: "For Corporates",
     para: "Thriving Employees, Thriving Business: See a rise in employee satisfaction, retention, and overall productivity. Lifetalk empowers your workforce to perform at their best.",
   },
@@ -338,15 +343,16 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap  justify-between md:gap-10">
+        <div className="flex flex-col md:flex-row max-lg:flex-wrap justify-between md:gap-5">
           {cardData.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col flex-grow w-96 items-center"
+              className="flex flex-col md:w-[45%] xl:w-[25%] items-center"
             >
               <div
                 className={`${
-                  item.heading === "For Employees"
+                  item.heading === "For Employees" ||
+                  item.heading === "For Individuals"
                     ? "bg-[#52309B]"
                     : "bg-[#52309B]"
                 } rounded-full p-4 relative -bottom-4`}
@@ -368,14 +374,16 @@ export default async function Home() {
               </div>
               <div
                 className={`${
-                  item.heading === "For Employees"
+                  item.heading === "For Employees" ||
+                  item.heading === "For Individuals"
                     ? "bg-[#FBC18E]"
                     : "bg-[#8A84E2]"
                 } p-7 rounded-[30px] flex-grow flex flex-col`}
               >
                 <p
                   className={`text-base ${
-                    item.heading === "For Employees"
+                    item.heading === "For Employees" ||
+                    item.heading === "For Individuals"
                       ? "text-black"
                       : "text-white"
                   } pb-2 font-semibold text-center`}
@@ -384,7 +392,8 @@ export default async function Home() {
                 </p>
                 <p
                   className={`${
-                    item.heading === "For Employees"
+                    item.heading === "For Employees" ||
+                    item.heading === "For Individuals"
                       ? "text-black"
                       : "text-white"
                   } text-center`}
@@ -558,13 +567,13 @@ export default async function Home() {
                 muted
                 autoPlay
                 playsInline
-                className=" w-full mix-blend-darken md:max-h-[500px] "
+                className=" w-full mix-blend-darken md:max-h-[500px]"
               >
                 <source
                   src={`https://tsuahomfkoxepnrgbjcu.supabase.co/storage/v1/object/public/assets/banner800.mp4?t=2024-06-12T11%3A40%3A36.667Z`}
                   type="video/mp4"
                 />
-                Your browser does not support the video tag.
+                Your browser does not support the video tag. 
               </video> */}
 
               <div className="flex justify-center flex-col  md:px-20">
